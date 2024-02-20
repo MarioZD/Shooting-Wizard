@@ -1,0 +1,23 @@
+
+
+Orden de trabajo:
+- Manejar Game Over
+- Enemigos básicos y su comportamiento.
+- Flujo del juego y Game Manager (eventos y cosas que vayan sucediendo).
+- Implementar interfaz.
+- Implementar sonidos
+- Visuales, implemetación de sprites.
+- Menús, íconos y detalles del arte.
+- Iluminación.
+- Detalles del manejo de la cámara (que siga ligeramente al Mouse).
+- Bug solving e implementar otras ideas.
+
+Brainstorm:
+	Enemigos
+		- Enemigo básico, te sigue regularmente (Por el momento caracterizado como zombie).
+		- Enemigo de hielo, te sigue pero cuando es golpeado sale volando (Cubo de hielo con ojos).
+		- Enemigo disparador, dispara balas hacia ti (Por el momento caracterizado como esqueleto).
+
+	Armas y habilidades
+		- Controlar mágicamente las balas, disparas la bala y esta sigue tu cursor mientras avanza antes de chocar contra la pared
+			(para implementarlo, hacer que la bala sea un elemento hijo de la pistola)

@@ -1,0 +1,42 @@
+FUNCIONAMIENTO DEL JUEGO
+
+OBJETOS IMPORTANTES:
+
+	Player:
+
+		Funciona por medio de una State Machine, en la cual cada estado tiene un script propio, y se conectan por medio de 
+		un State Manager, que crea un objeto instancia de cada estado, y los va adminstrando según 
+		los eventos del juego. Cuenta con los estados:
+
+			- Activo: El jugador está vivo, se le permite moverse, disparar, y realizar habilidades (por implementar). 
+			Forma parte de la interfaz IDamagable, haciendo que tenga una función Damage() por medio de la cual se le
+			realiza daño, y una variable Health.
+
+			- Muerto: El jugador muere, este estado ejecuta el evento de Game Over (por implementar)
+
+			(Dentro del State Manager se realiza una función para calcuilar el ángulo en el que se encuentra el cursor
+			respecto al jugador)
+
+		Firepoint
+			
+			Objetos unidos al jugador, son sprites invisibles que sirven como referencia de dónde se une la pistola cuando
+			es recogida. Están el derecho y el izquierdo.
+	Gun:
+		Pistola con la cual dispara el jugador. Cuenta con un prefab distinto para cuando se encuentra sin agarrar en el
+		piso, y uno para cuando está activo.
+		
+			- Gun in floor: Forma parte de la interfaz IInteractable, lo que permite que el jugador interactúe con ella 
+			presionando la tecla e. Calcula la distancia con el jugador para saber si se encuentra dentro del rango de 
+			interactuabilidad, en cuyo caso se puede interactuar usando la función Interact(). Cambia el cursor a la hora
+			de ser recogida.
+
+			- Active Gun: Pistola cuando es recogida por el jugador. Permite disparar. Esta alterna entre las posiciones 
+			de los dos firepoints según él ángulo del cursor respecto al jugador, el cual es calculado gracias
+			a la función integrada en el State Manager del éste. 
+			Para disparar, crea una instsancia de un objeto "Bullet", que se destruye a la primera colisión (exceptuando
+			una colisión con el jugador), y busca si el objecto con el que colisionó forma parte de IDamagable, en cuyo
+			caso le hace daño.
+
+
+
+			 
