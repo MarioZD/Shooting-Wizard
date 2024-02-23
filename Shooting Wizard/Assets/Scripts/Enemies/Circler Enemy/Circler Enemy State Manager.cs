@@ -2,27 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootingEnemyStateManager : MonoBehaviour, IDamagable
+public class CirclerEnemyStateManager : MonoBehaviour, IDamagable
 {
-    public EnemyBaseState idleState = new ShootingEnemyIdleState();
-    public EnemyBaseState onSightState = new ShootingEnemyPlayerOnSightState();
-    public EnemyBaseState cooldownState = new ShootingEnemyCooldownState();
-    public EnemyBaseState deadState = new ShootingEnemyDeadState();
+    public CirclerEnemyBaseState idleState = new CirclerEnemyIdleState();
+    public CirclerEnemyBaseState onSightState = new CirclerEnemyPlayerOnSightState();
+    public CirclerEnemyBaseState cooldownState = new CirclerEnemyCooldownState();
+    public CirclerEnemyBaseState deadState = new CirclerEnemyDeadState();
 
     public GameObject player;
     public GameObject bullet;
     public Transform firepoint;
     public Rigidbody2D rb;
 
-    EnemyBaseState currentState;
-    public float shootingRange = 12f;
+    CirclerEnemyBaseState currentState;
+    public float shootingRange = 6f;
     public float speed = 3f;
-    public float health = 4;
+    public float health = 4f;
     public float DamageTimerDefault = 1f;
     public float DamageTimer = 1f;
     public float physicalPower = 1f;
-    public float fieldOfVisionNumber = 15f;
+    public float fieldOfVisionNumber = 9f;
     public float cooldownTime = 2f;
+    public float bulletAmount = 8;
 
     public float Health
     {
@@ -51,10 +52,11 @@ public class ShootingEnemyStateManager : MonoBehaviour, IDamagable
         currentState.OnCollisionStay2D(this, collision);
     }
 
-    public void SwitchState(EnemyBaseState state)
+    public void SwitchState(CirclerEnemyBaseState state)
     {
         currentState = state;
         currentState.EnterState(this);
+        Debug.Log("Circler enemy is on " + currentState + "state");
     }
 
 

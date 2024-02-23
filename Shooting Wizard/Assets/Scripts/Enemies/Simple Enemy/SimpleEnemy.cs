@@ -15,6 +15,7 @@ public class SimpleEnemy : MonoBehaviour, IDamagable
     float speed = 3;
     float health = 3;
     GameObject player;
+    public GameObject[] drops;
 
     public float DamageTimer = 1f;
     public float Health
@@ -110,6 +111,12 @@ public class SimpleEnemy : MonoBehaviour, IDamagable
 
     public void Die()
     {
+        if (drops != null)
+        {
+            if (Random.Range(1, 10) >= 8)
+            { Instantiate(drops[Random.Range(0, drops.Length - 1)]); }
+
+        }
         Destroy(gameObject);
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class CirclerBullet : MonoBehaviour
 {
     float lifeTime = 5f;
     float damage_amount = 1f;
@@ -18,16 +18,7 @@ public class EnemyBullet : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.Find("Player");
-
         rb = GetComponent<Rigidbody2D>();
-        playerPosition = player.transform.position;
-        enemyPosition = transform.position;
-        playerPosition.x -= enemyPosition.x;
-        playerPosition.y -= enemyPosition.y;
-        angle = Mathf.Atan2(playerPosition.y, playerPosition.x) * Mathf.Rad2Deg + 180f;
-
-        transform.rotation = Quaternion.Euler(0, 0, angle);
         rb.AddForce((-transform.right) * bulletForce, ForceMode2D.Impulse);
     }
     private void Awake()

@@ -13,8 +13,13 @@ public class GameManager : MonoBehaviour
 
     public static event Action FirstBattle;
     public static event Action FirstBattleOver;
+
     public static event Action SecondBattle;
     public static event Action SecondBattleOver;
+
+    public static event Action ThirdBattle;
+    public static event Action ThirdBattleOver;
+
     public static event Action GameOver;
 
     public static float enemyCount = 0;
@@ -45,10 +50,15 @@ public class GameManager : MonoBehaviour
 
             case GameState.secondBattle:
                 SecondBattle?.Invoke();
-                Debug.Log("Second Battle has been invoked");
                 onBattle = true;
                 InSecondBattle();
                 break;
+
+            case GameState.thirdBattle:
+                ThirdBattle?.Invoke();
+                onBattle = true;
+                break;
+
 
             case GameState.gameOver:
                 GameOver?.Invoke();
@@ -65,6 +75,7 @@ public class GameManager : MonoBehaviour
         firstBatlle,
         betweenBattles,
         secondBattle,
+        thirdBattle,
         gameOver
 
     }
@@ -78,6 +89,8 @@ public class GameManager : MonoBehaviour
         FirstBattleOver = null;
         SecondBattle = null;
         SecondBattleOver = null;
+        ThirdBattle = null;
+        ThirdBattleOver = null;
         GameOver = null;
 
         FirstBattleOver += testingEvent;
@@ -115,6 +128,13 @@ public class GameManager : MonoBehaviour
         BattleMusic.Play();
     }
 
+    public void InThirdBattle()
+    {
+        BetweenBattleMusic.Stop();
+        BattleMusic.Play();
+    }
+
+
     public void GameIsOver()
     {
 
@@ -140,6 +160,13 @@ public class GameManager : MonoBehaviour
                 SecondBattleOver?.Invoke();
                 SwitchState(GameState.betweenBattles);
                 break;
+
+            case GameState.thirdBattle:
+                StartCoroutine(StopAndStartMusic(BattleMusic, BetweenBattleMusic));
+                ThirdBattleOver?.Invoke();
+                SwitchState(GameState.betweenBattles);
+                break;
+
 
         }
 
