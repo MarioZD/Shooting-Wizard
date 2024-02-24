@@ -165,7 +165,9 @@ MonoBehaviour:
   bullet: {fileID: 3158935310888887153, guid: 23ddd8528f73c984b8eec8f49108aa3e, type: 3}
   firepoint: {fileID: 1188997578116721929}
   rb: {fileID: 5593090865889248117}
-  shootingRange: 6
+  drops:
+  - {fileID: 3967048216679057629, guid: 5a316c90bbe05404d9397af72d902217, type: 3}
+  shootingRange: 5
   speed: 3
   health: 4
   DamageTimerDefault: 1

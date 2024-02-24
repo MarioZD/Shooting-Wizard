@@ -49,7 +49,7 @@ public class GunStateManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!PauseMenu.GameIsPaused)
+        if (!PauseMenu.GameIsPaused && !DialogueManager.isActive)
         {
             currentState.UpdateState(this);
         }

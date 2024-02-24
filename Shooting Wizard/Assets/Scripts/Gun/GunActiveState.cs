@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Cinemachine;
 using UnityEngine.UIElements;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class GunActiveState : GunBaseState
 {
     GunStateManager Gun;
+    CinemachineImpulseSource GunShake;
     public override void EnterState(GunStateManager gun)
     {
         Gun = gun;
+        GunShake = gun.GetComponent<CinemachineImpulseSource>();
     }
     public override void UpdateState(GunStateManager gun)
     {
@@ -35,6 +38,7 @@ public class GunActiveState : GunBaseState
     void Shoot()
     {
         Gun.ShootSound.Play();
+        CameraShakeManager.Instance.CameraShake(GunShake, 0.1f);
         UnityEngine.GameObject.Instantiate(Gun.bullet, Gun.shootPoint.position, Quaternion.Euler(0, 0, Gun.angle));
         Gun.ammo -= 1;
     }

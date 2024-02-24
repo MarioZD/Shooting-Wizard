@@ -1,3 +1,4 @@
+using Cinemachine;
 using JetBrains.Annotations;
 using System;
 using System.Collections;
@@ -12,6 +13,9 @@ public class InFloorGun : MonoBehaviour, IInteractable
     public Transform firepoint;
     public GameManager gameManager;
     public GameObject interactableKey;
+
+    public DialogueTrigger dialogue1;
+    public DialogueTrigger dialogue2;
 
     public float interactabilityDistance = 2.3f;
 
@@ -60,11 +64,31 @@ public class InFloorGun : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        StartCoroutine(Interacting());
+
+    }
+
+    IEnumerator Interacting()
+    {
+
+        dialogue1.StartDialogue();
+
+        while (DialogueManager.isActive)
+        {
+            yield return null;
+        }
+
+        CinemachineImpulseSource ShakeSource = GetComponent<CinemachineImpulseSource>();
+        CameraShakeManager.Instance.CameraShake(ShakeSource);
+        dialogue2.StartDialogue();
+
+        while (DialogueManager.isActive)
+        {
+            yield return null;
+        }
+
         Instantiate(gun_object, firepoint.transform);
-
         Destroy(gameObject);
-        Debug.Log("You interacted with this object");
-
         gameManager.SwitchState(GameManager.GameState.firstBatlle);
     }
 }

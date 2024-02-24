@@ -166,13 +166,15 @@ MonoBehaviour:
   bullet: {fileID: 3631731245705286147, guid: 2fbd97d26ee98c7439fd4939f77caf7c, type: 3}
   firepoint: {fileID: 6950152507871036190}
   rb: {fileID: 4431904840445685468}
-  shootingRange: 12
+  drops:
+  - {fileID: 3967048216679057629, guid: 5a316c90bbe05404d9397af72d902217, type: 3}
+  shootingRange: 6
   speed: 3
   health: 4
   DamageTimerDefault: 1
   DamageTimer: 1
   physicalPower: 1
-  fieldOfVisionNumber: 15
+  fieldOfVisionNumber: 10
   cooldownTime: 2
 --- !u!1 &7305046003204764351
 GameObject:

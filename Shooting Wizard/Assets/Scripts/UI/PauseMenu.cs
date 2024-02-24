@@ -68,4 +68,9 @@ public class PauseMenu : MonoBehaviour
         Resume();
         SceneManager.LoadScene("Menu");
     }
+
+    public void ChangeVolume(float volume)
+    {
+
+    }
 }

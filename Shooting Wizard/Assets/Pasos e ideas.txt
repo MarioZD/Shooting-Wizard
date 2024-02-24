@@ -1,16 +1,21 @@
 
 
 Orden de trabajo:
-- Manejar Game Over
 - Enemigos básicos y su comportamiento.
-- Flujo del juego y Game Manager (eventos y cosas que vayan sucediendo).
-- Implementar interfaz.
 - Implementar sonidos
 - Visuales, implemetación de sprites.
 - Menús, íconos y detalles del arte.
-- Iluminación.
 - Detalles del manejo de la cámara (que siga ligeramente al Mouse).
 - Bug solving e implementar otras ideas.
+
+TODO:
+- Agregar diálogo al principio
+- Mejorar detección de los enemigos (quizá raycasting?)
+- Hacer funcional menu de opciones
+- Añadir imagenes a interfaces
+- Crear e implementar animaciones
+- Agregar poderes al mago
+
 
 Brainstorm:
 	Enemigos

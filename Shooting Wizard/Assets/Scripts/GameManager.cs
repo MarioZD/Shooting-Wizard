@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public GameState State;
 
+    public DialogueTrigger StartingDialogue;
+
     public static event Action FirstBattle;
     public static event Action FirstBattleOver;
 
@@ -93,6 +95,8 @@ public class GameManager : MonoBehaviour
         ThirdBattleOver = null;
         GameOver = null;
 
+        StartingDialogue = GetComponent<DialogueTrigger>();
+
         FirstBattleOver += testingEvent;
 
         SwitchState(GameState.gunNotPickedUp);
@@ -114,7 +118,7 @@ public class GameManager : MonoBehaviour
 
     public void GunNotPickedUp()
     {
-
+        StartingDialogue.StartDialogue();
     }
 
     public void InFirstBattle()

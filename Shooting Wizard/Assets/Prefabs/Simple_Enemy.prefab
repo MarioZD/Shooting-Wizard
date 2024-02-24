@@ -127,6 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5729108742093256547}
+  drops:
+  - {fileID: 3967048216679057629, guid: 5a316c90bbe05404d9397af72d902217, type: 3}
   DamageTimer: 1
 --- !u!70 &7916351926876605925
 CapsuleCollider2D:

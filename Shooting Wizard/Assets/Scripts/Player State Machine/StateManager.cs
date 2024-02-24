@@ -24,7 +24,15 @@ public class PlayerStateManager : MonoBehaviour, IDamagable
 
     void Update()
     {
-        currentState.UpdateState(this);
+        if (!DialogueManager.isActive)
+        {
+            currentState.UpdateState(this);
+        }
+
+        if (Health <= 0 )
+        {
+            SwitchState(deadState); 
+        }
     }
 
     public void SwitchState(PlayerBaseState state)

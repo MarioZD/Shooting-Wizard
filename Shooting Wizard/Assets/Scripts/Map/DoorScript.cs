@@ -43,6 +43,10 @@ public class DoorScript : MonoBehaviour
     {
         leftDoor.GetComponent<SpriteRenderer>().sprite = leftDoorClosed;
         rightDoor.GetComponent<SpriteRenderer>().sprite = rightDoorClosed;
+        Destroy(leftDoor.GetComponent<PolygonCollider2D>());
+        leftDoor.AddComponent<PolygonCollider2D>();
+        Destroy(rightDoor.GetComponent<PolygonCollider2D>());
+        rightDoor.AddComponent<PolygonCollider2D>();
     }
 
 }

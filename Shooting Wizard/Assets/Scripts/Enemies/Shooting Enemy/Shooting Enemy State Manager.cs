@@ -13,6 +13,7 @@ public class ShootingEnemyStateManager : MonoBehaviour, IDamagable
     public GameObject bullet;
     public Transform firepoint;
     public Rigidbody2D rb;
+    public GameObject[] drops;
 
     EnemyBaseState currentState;
     public float shootingRange = 12f;
@@ -34,7 +35,7 @@ public class ShootingEnemyStateManager : MonoBehaviour, IDamagable
     {
         player = GameObject.FindWithTag("Player");
         rb = gameObject.GetComponent<Rigidbody2D>();
-        currentState = idleState;
+        currentState = cooldownState;
         currentState.EnterState(this);
     }
 

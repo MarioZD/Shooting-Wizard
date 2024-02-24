@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class HealthPotion : MonoBehaviour, IInteractable
 {
-    GameObject player;
+    public GameObject player;
     PlayerStateManager stateManager;
-    Sprite normalSprite;
-    Sprite SelectedSprite;
-    SpriteRenderer SpriteRenderer;
+    public Sprite normalSprite;
+    public Sprite SelectedSprite;
+    public SpriteRenderer SpriteRenderer;
 
     public GameObject interactableKey;
 
@@ -19,8 +19,8 @@ public class HealthPotion : MonoBehaviour, IInteractable
 
     void Awake()
     {
-        stateManager = player.GetComponent<PlayerStateManager>();
         player = GameObject.FindGameObjectWithTag("Player");
+        stateManager = player.GetComponent<PlayerStateManager>();
         playerDamagable = player.GetComponent<IDamagable>();
     }
 

@@ -11,7 +11,6 @@ public class SimpleEnemy : MonoBehaviour, IDamagable
     IDamagable damagable;
     const float power = 1;
     const float fieldOfVisionNumber = 7;
-    float attackDistance = 3;
     float speed = 3;
     float health = 3;
     GameObject player;
@@ -113,8 +112,10 @@ public class SimpleEnemy : MonoBehaviour, IDamagable
     {
         if (drops != null)
         {
-            if (Random.Range(1, 10) >= 8)
-            { Instantiate(drops[Random.Range(0, drops.Length - 1)]); }
+            if (Random.Range(1, 10) >= 9)
+            {
+                UnityEngine.GameObject.Instantiate(drops[Random.Range(0, drops.Length - 1)], transform.position, Quaternion.identity);
+            }
 
         }
         Destroy(gameObject);

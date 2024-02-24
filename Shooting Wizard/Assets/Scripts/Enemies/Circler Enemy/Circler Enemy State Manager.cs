@@ -13,6 +13,7 @@ public class CirclerEnemyStateManager : MonoBehaviour, IDamagable
     public GameObject bullet;
     public Transform firepoint;
     public Rigidbody2D rb;
+    public GameObject[] drops;
 
     CirclerEnemyBaseState currentState;
     public float shootingRange = 6f;
@@ -35,7 +36,7 @@ public class CirclerEnemyStateManager : MonoBehaviour, IDamagable
     {
         player = GameObject.FindWithTag("Player");
         rb = gameObject.GetComponent<Rigidbody2D>();
-        currentState = idleState;
+        currentState = cooldownState;
         currentState.EnterState(this);
     }
 

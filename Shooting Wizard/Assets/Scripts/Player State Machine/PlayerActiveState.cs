@@ -23,12 +23,7 @@ public class PlayerActiveState : PlayerBaseState, IDamagable
     }
     public override void UpdateState(PlayerStateManager player)
     {
-        if (Health <= 0)
-        {
-            player.SwitchState(player.deadState);
-        }
         PlayerMove();
-
     }
     public void Damage(float DamageAmount)
     {

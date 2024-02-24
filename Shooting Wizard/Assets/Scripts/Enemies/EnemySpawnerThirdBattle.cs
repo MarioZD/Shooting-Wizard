@@ -45,6 +45,7 @@ public class ThirdBattleEnemySpawner: MonoBehaviour
             { 
                 yield return null; 
             }
+
         }
     }
 }
