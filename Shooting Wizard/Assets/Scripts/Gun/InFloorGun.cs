@@ -74,9 +74,9 @@ public class InFloorGun : MonoBehaviour, IInteractable
 
     IEnumerator Interacting()
     {
-
+        
         dialogue1.StartDialogue();
-
+        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         while (DialogueManager.isActive)
         {
             yield return null;
@@ -84,6 +84,7 @@ public class InFloorGun : MonoBehaviour, IInteractable
 
         CinemachineImpulseSource ShakeSource = GetComponent<CinemachineImpulseSource>();
         CameraShakeManager.Instance.CameraShake(ShakeSource);
+
         dialogue2.StartDialogue();
 
         while (DialogueManager.isActive)
