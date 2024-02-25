@@ -14,6 +14,7 @@ public class CirclerEnemyCooldownState : CirclerEnemyBaseState
         enemy.rb.velocity = Vector3.zero;
         CurrentEnemy = enemy;
         cooldown = CurrentEnemy.cooldownTime;
+        enemy.rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
     public override void UpdateState(CirclerEnemyStateManager enemy)
     {

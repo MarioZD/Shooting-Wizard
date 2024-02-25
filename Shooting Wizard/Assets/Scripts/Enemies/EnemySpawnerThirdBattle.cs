@@ -41,10 +41,8 @@ public class ThirdBattleEnemySpawner: MonoBehaviour
         {
             LastEnemy = Instantiate(Enemies[i], transform.position, Quaternion.identity);
             GameManager.enemyCount++;
-            while (!(Vector3.Distance(LastEnemy.transform.position, transform.position) > 2f))
-            { 
-                yield return null; 
-            }
+
+            yield return new WaitForSeconds(2f);
 
         }
     }

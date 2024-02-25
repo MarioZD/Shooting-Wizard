@@ -7,7 +7,9 @@ using UnityEngine;
 public class DialogueManager : MonoBehaviour
 {
     public TMP_Text message;
+    public TMP_Text sayer;
     public RectTransform messageBox;
+    public float textSpeed = 0.001f;
 
     Message[] currentMessages;
     int activeMessage = 0;
@@ -24,21 +26,42 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayMessage()
     {
-        Message messageToDisplay = currentMessages[activeMessage];
-        message.text = messageToDisplay.message;
+        sayer.text = currentMessages[activeMessage].name;
+        StartCoroutine(DisplayingMessage());
+    }
+
+    IEnumerator DisplayingMessage()
+    {
+        message.text = string.Empty;
+        foreach (char c in currentMessages[activeMessage].message.ToCharArray()) 
+        {
+            message.text += c;
+            yield return new WaitForSeconds(textSpeed);
+        }
     }
 
     public void NextMessage()
     {
-        activeMessage++;
-        if (activeMessage < currentMessages.Length)
+        if (message.text == currentMessages[activeMessage].message)
         {
-            DisplayMessage();
+            activeMessage++;
+            if (activeMessage < currentMessages.Length)
+            {
+                StopAllCoroutines();
+                DisplayMessage();
+            }
+            else
+            {
+                StopAllCoroutines();
+                messageBox.localScale = Vector3.zero;
+                isActive = false;
+            }
         }
+
         else
         {
-            messageBox.localScale = Vector3.zero;
-            isActive = false;
+            StopAllCoroutines();
+            message.text = currentMessages[activeMessage].message;
         }
         
     }

@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
 
             case GameState.thirdBattle:
                 ThirdBattle?.Invoke();
+                InThirdBattle();
                 onBattle = true;
                 break;
 
