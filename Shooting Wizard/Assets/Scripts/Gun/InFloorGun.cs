@@ -33,12 +33,16 @@ public class InFloorGun : MonoBehaviour, IInteractable
         
 
         GetInteractability();
-        if (Input.GetKeyDown("e"))
+        if (!DialogueManager.isActive)
         {
-            if (interactable)
+            if (Input.GetKeyDown("e"))
             {
-                Interact();
-            }
+                if (interactable)
+                {
+                    Interact();
+                }
+
+        }
         }
     }
 

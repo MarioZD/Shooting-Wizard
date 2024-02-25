@@ -9,12 +9,13 @@ Orden de trabajo:
 - Bug solving e implementar otras ideas.
 
 TODO:
-- Añadir cinemática empezando la historia
+- Añadir imágenes a la intro
 - Agregar diálogo al principio
 - Mejorar detección de los enemigos (quizá raycasting?)
 - Hacer funcional menu de opciones
 - Añadir imagenes a interfaces
 - Crear e implementar animaciones (personajes brillan cuando les diparan)
+- Crear logos y cosas para el juego
 - Agregar poderes al mago
 - Añadir final del juego
 

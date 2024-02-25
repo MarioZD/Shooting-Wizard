@@ -21,7 +21,7 @@ public class CirclerEnemyPlayerOnSightState : CirclerEnemyBaseState
         CurrentEnemy = enemy;
         PhysicalPower = enemy.physicalPower;
         firstCooldown = enemy.cooldownTime;
-        enemy.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        enemy.rb.constraints = RigidbodyConstraints2D.FreezeRotation;   
     }
     public override void UpdateState(CirclerEnemyStateManager enemy)
     {
