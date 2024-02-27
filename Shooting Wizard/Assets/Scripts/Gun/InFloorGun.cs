@@ -16,6 +16,7 @@ public class InFloorGun : MonoBehaviour, IInteractable
 
     public DialogueTrigger dialogue1;
     public DialogueTrigger dialogue2;
+    public DialogueTrigger dialogue3;
 
     public float interactabilityDistance = 2.3f;
 
@@ -94,6 +95,7 @@ public class InFloorGun : MonoBehaviour, IInteractable
 
         Instantiate(gun_object, firepoint.transform);
         Destroy(gameObject);
+        dialogue3.StartDialogue();
         gameManager.SwitchState(GameManager.GameState.firstBatlle);
     }
 }

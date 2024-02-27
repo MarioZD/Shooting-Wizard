@@ -42,8 +42,11 @@ public class ShootingEnemyStateManager : MonoBehaviour, IDamagable
 
     void Update()
     {
-        currentState.UpdateState(this);
-        DamageTimer -= Time.deltaTime;
+        if (!DialogueManager.isActive)
+        {
+            currentState.UpdateState(this);
+            DamageTimer -= Time.deltaTime;
+        }
 
     }
 

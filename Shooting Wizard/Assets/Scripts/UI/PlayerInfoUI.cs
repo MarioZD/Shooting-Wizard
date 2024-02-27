@@ -9,33 +9,21 @@ public class PlayerInfoUI : MonoBehaviour
     private void Awake()
     {
         
-        GameManager.FirstBattle += EnablePlayerInfo;
         DisablePlayerInfo();
     }
 
     void OnDestroy()
     {
-        GameManager.FirstBattle -= EnablePlayerInfo;
         DisablePlayerInfo();
     }
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void DisablePlayerInfo()
+    public void DisablePlayerInfo()
     {
         gameObject.SetActive(false);
     }
 
 
-    void EnablePlayerInfo()
+    public void EnablePlayerInfo()
     {
         gameObject.SetActive(true);
     }

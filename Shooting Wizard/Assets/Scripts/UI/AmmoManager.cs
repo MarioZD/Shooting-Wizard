@@ -9,7 +9,7 @@ public class AmmoManager : MonoBehaviour
     public GameManager gameManager;
     public TMP_Text textAmmo;
     public GunStateManager gun;
-    // Start is called before the first frame update
+
 
 
     private void OnEnable()
@@ -20,21 +20,10 @@ public class AmmoManager : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.FirstBattle += Enable;
         gameObject.SetActive(false);
     }
 
-    private void OnDestroy()
-    {
-        GameManager.FirstBattle -= Enable;
-    }
 
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (gun.currentState == gun.reloadingState)
@@ -48,7 +37,7 @@ public class AmmoManager : MonoBehaviour
         }
     }
 
-    void Enable()
+    public void Enable()
     {
         gameObject.SetActive(true);
     }
