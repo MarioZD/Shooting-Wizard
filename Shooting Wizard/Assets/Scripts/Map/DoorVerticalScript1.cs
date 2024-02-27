@@ -10,17 +10,9 @@ public class DoorVerticalScript : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
-    {
-        GameManager.SecondBattle += CloseDoor;
-        GameManager.SecondBattleOver += OpenDoor;
-    }
 
-    private void OnDestroy()
-    {
-        GameManager.SecondBattleOver -= OpenDoor;
-        GameManager.SecondBattle -= CloseDoor;
-    }
+
+
 
     public void OpenDoor()
     {

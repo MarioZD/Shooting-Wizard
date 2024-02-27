@@ -11,25 +11,6 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] GameObject[] Enemies;
     // Start is called before the first frame update
 
-    private void Awake()
-    {
-        
-    }
-    void Start()
-    {
-        GameManager.FirstBattle += StartSpawning;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnDestroy()
-    {
-        GameManager.FirstBattle -= StartSpawning;
-    }
 
     public void StartSpawning()
     {
@@ -37,13 +18,20 @@ public class EnemySpawner : MonoBehaviour
     }
     public IEnumerator SpawnEnemies()
     {
-        for (int i = 0; i < Enemies.Length; i++) 
+        for (int i = 0; i < Enemies.Length; i++)
         {
             LastEnemy = Instantiate(Enemies[i], transform.position, Quaternion.identity);
             GameManager.enemyCount++;
-            while (!(Vector3.Distance(LastEnemy.transform.position, transform.position) > 2f))
-            { 
-                yield return null; 
+            while (LastEnemy != null)
+            {
+                if (!(Vector3.Distance(LastEnemy.transform.position, transform.position) > 2f))
+                {
+                    yield return null;
+                }
+                else
+                {
+                    break;
+                }
             }
         }
     }
