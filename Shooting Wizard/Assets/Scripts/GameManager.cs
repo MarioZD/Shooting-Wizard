@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,14 +14,14 @@ public class GameManager : MonoBehaviour
 
     public DialogueTrigger StartingDialogue;
 
-    public static event Action FirstBattle;
-    public static event Action FirstBattleOver;
-
-    public static event Action SecondBattle;
-    public static event Action SecondBattleOver;
-
-    public static event Action ThirdBattle;
-    public static event Action ThirdBattleOver;
+    public UnityEvent FirstBattle;
+    public UnityEvent FirstBattleOver;
+            
+    public UnityEvent SecondBattle;
+    public UnityEvent SecondBattleOver;
+            
+    public UnityEvent ThirdBattle;
+    public UnityEvent ThirdBattleOver;
 
     public static event Action GameOver;
 
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     public AudioSource BattleMusic;
     public AudioSource BetweenBattleMusic;
-
+    public AudioSource FirstBattleMusic;
 
     public void SwitchState(GameState newState)
     {
@@ -88,17 +89,11 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        FirstBattle = null;
-        FirstBattleOver = null;
-        SecondBattle = null;
-        SecondBattleOver = null;
-        ThirdBattle = null;
-        ThirdBattleOver = null;
+
         GameOver = null;
 
         StartingDialogue = GetComponent<DialogueTrigger>();
 
-        FirstBattleOver += testingEvent;
 
         SwitchState(GameState.gunNotPickedUp);
     }
@@ -116,7 +111,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
     public void GunNotPickedUp()
     {
         StartingDialogue.StartDialogue();
@@ -124,7 +118,7 @@ public class GameManager : MonoBehaviour
 
     public void InFirstBattle()
     {
-        BattleMusic.Play();
+        FirstBattleMusic.Play();
     }
 
     public void InSecondBattle()
@@ -155,13 +149,13 @@ public class GameManager : MonoBehaviour
         switch (state) 
         {
             case GameState.firstBatlle:
-                StartCoroutine(StopAndStartMusic(BattleMusic, BetweenBattleMusic));
+                StartCoroutine(StopAndStartMusic(FirstBattleMusic, BetweenBattleMusic));
                 FirstBattleOver?.Invoke();
                 SwitchState(GameState.betweenBattles);
                 break;
 
             case GameState.secondBattle:
-                StartCoroutine(StopAndStartMusic(BattleMusic, BetweenBattleMusic));
+                StartCoroutine(StopAndStartMusic( BattleMusic, BetweenBattleMusic));
                 SecondBattleOver?.Invoke();
                 SwitchState(GameState.betweenBattles);
                 break;

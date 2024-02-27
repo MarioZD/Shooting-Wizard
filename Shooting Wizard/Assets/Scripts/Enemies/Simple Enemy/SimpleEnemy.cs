@@ -32,17 +32,19 @@ public class SimpleEnemy : MonoBehaviour, IDamagable
     // Update is called once per frame
     void Update()
     {
-        
-       if (PlayerOnSight())
+       if (!DialogueManager.isActive)
         {
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-            MoveTowardsPlayer();
+           if (PlayerOnSight())
+            {
+                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+                MoveTowardsPlayer();
+            }
+           else
+            {
+               rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            }
+            DamageTimer -= Time.deltaTime; 
         }
-       else
-        {
-           rb.constraints = RigidbodyConstraints2D.FreezeAll;
-        }
-        DamageTimer -= Time.deltaTime; 
     }
 
     

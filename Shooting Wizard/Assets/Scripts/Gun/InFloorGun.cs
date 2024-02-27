@@ -16,6 +16,7 @@ public class InFloorGun : MonoBehaviour, IInteractable
 
     public DialogueTrigger dialogue1;
     public DialogueTrigger dialogue2;
+    public DialogueTrigger dialogue3;
 
     public float interactabilityDistance = 2.3f;
 
@@ -74,9 +75,9 @@ public class InFloorGun : MonoBehaviour, IInteractable
 
     IEnumerator Interacting()
     {
-
+        
         dialogue1.StartDialogue();
-
+        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         while (DialogueManager.isActive)
         {
             yield return null;
@@ -84,6 +85,7 @@ public class InFloorGun : MonoBehaviour, IInteractable
 
         CinemachineImpulseSource ShakeSource = GetComponent<CinemachineImpulseSource>();
         CameraShakeManager.Instance.CameraShake(ShakeSource);
+
         dialogue2.StartDialogue();
 
         while (DialogueManager.isActive)
@@ -93,6 +95,7 @@ public class InFloorGun : MonoBehaviour, IInteractable
 
         Instantiate(gun_object, firepoint.transform);
         Destroy(gameObject);
+        dialogue3.StartDialogue();
         gameManager.SwitchState(GameManager.GameState.firstBatlle);
     }
 }
