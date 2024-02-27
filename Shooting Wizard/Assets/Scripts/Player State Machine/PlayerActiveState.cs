@@ -11,15 +11,16 @@ public class PlayerActiveState : PlayerBaseState, IDamagable
         get { return health; }
         set { health = value; }
     }
-        Vector2 movement;
-        float speed = 6;
-        Rigidbody2D rb;
-        Camera cam;
-        Vector2 mousePos;
+    Vector2 movement;
+    float speed;
+    Rigidbody2D rb;
+    Camera cam;
+    Vector2 mousePos;
 
     public override void EnterState(PlayerStateManager player)
     {
         rb = player.rb;
+        speed = player.speed;
     }
     public override void UpdateState(PlayerStateManager player)
     {

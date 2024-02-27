@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     public AudioSource BattleMusic;
     public AudioSource BetweenBattleMusic;
-
+    public AudioSource FirstBattleMusic;
 
     public void SwitchState(GameState newState)
     {
@@ -116,7 +116,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
     public void GunNotPickedUp()
     {
         StartingDialogue.StartDialogue();
@@ -124,7 +123,7 @@ public class GameManager : MonoBehaviour
 
     public void InFirstBattle()
     {
-        BattleMusic.Play();
+        FirstBattleMusic.Play();
     }
 
     public void InSecondBattle()
@@ -155,13 +154,13 @@ public class GameManager : MonoBehaviour
         switch (state) 
         {
             case GameState.firstBatlle:
-                StartCoroutine(StopAndStartMusic(BattleMusic, BetweenBattleMusic));
+                StartCoroutine(StopAndStartMusic(FirstBattleMusic, BetweenBattleMusic));
                 FirstBattleOver?.Invoke();
                 SwitchState(GameState.betweenBattles);
                 break;
 
             case GameState.secondBattle:
-                StartCoroutine(StopAndStartMusic(BattleMusic, BetweenBattleMusic));
+                StartCoroutine(StopAndStartMusic( BattleMusic, BetweenBattleMusic));
                 SecondBattleOver?.Invoke();
                 SwitchState(GameState.betweenBattles);
                 break;

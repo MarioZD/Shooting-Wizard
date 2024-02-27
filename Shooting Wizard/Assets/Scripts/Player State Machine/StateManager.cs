@@ -15,6 +15,7 @@ public class PlayerStateManager : MonoBehaviour, IDamagable
     public Rigidbody2D rb;
 
     public float maxHealth = 6;
+    public float speed = 6;
 
     void Start()
     {

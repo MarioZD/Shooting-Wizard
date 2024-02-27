@@ -9,6 +9,7 @@ public class SecondBattleEnemySpawner: MonoBehaviour
     GameObject LastEnemy;
     [SerializeField] GameManager gameManager;
     [SerializeField] GameObject[] Enemies;
+    
     // Start is called before the first frame update
 
     private void Awake()
@@ -37,13 +38,21 @@ public class SecondBattleEnemySpawner: MonoBehaviour
     }
     public IEnumerator SpawnEnemies()
     {
+
         for (int i = 0; i < Enemies.Length; i++) 
         {
             LastEnemy = Instantiate(Enemies[i], transform.position, Quaternion.identity);
             GameManager.enemyCount++;
-            while (!(Vector3.Distance(LastEnemy.transform.position, transform.position) > 2f))
-            { 
-                yield return null; 
+            while (LastEnemy != null)
+            {
+                if (!(Vector3.Distance(LastEnemy.transform.position, transform.position) > 2f))
+                {
+                    yield return null;
+                }
+                else
+                {
+                    break;
+                }
             }
         }
     }
