@@ -104,8 +104,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 0
-  rb: {fileID: 0}
+  rb: {fileID: 8224805315955199858}
   maxHealth: 6
+  speed: 6
 --- !u!114 &169728030607343230
 MonoBehaviour:
   m_ObjectHideFlags: 0

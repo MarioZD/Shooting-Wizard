@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     public GameState State;
 
+    public GameState startingState; 
+
     public DialogueTrigger StartingDialogue;
 
     public UnityEvent FirstBattle;
@@ -63,11 +65,16 @@ public class GameManager : MonoBehaviour
                 onBattle = true;
                 break;
 
+            case GameState.secondRoom:
+                break;
+
 
             case GameState.gameOver:
                 GameOver?.Invoke();
                 GameIsOver();
                 break;
+
+
         }
 
     }
@@ -80,6 +87,7 @@ public class GameManager : MonoBehaviour
         betweenBattles,
         secondBattle,
         thirdBattle,
+        secondRoom,
         gameOver
 
     }
@@ -95,9 +103,12 @@ public class GameManager : MonoBehaviour
         StartingDialogue = GetComponent<DialogueTrigger>();
 
 
-        SwitchState(GameState.gunNotPickedUp);
+        
     }
-
+    private void Start()
+    {
+        SwitchState(startingState);
+    }
     // Update is called once per frame
     void Update()
     {

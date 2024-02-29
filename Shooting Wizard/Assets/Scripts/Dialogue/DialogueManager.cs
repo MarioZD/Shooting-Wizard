@@ -15,6 +15,10 @@ public class DialogueManager : MonoBehaviour
     int activeMessage = 0;
     public static bool isActive = false;
 
+    private void Awake()
+    {
+        messageBox.localScale = Vector3.zero;
+    }
     public void OpenDialogue(Message[] messages)
     {
         activeMessage = 0;
