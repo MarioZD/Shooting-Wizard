@@ -11,16 +11,16 @@ public class GameOverScreen : MonoBehaviour
     private void Awake()
     {
         GameManager.GameOver += EnableScreen;
+
+    }
+    private void Start()
+    {
         gameObject.SetActive(false);
     }
 
     private void OnDestroy()
     {
         GameManager.GameOver -= EnableScreen;
-    }
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame

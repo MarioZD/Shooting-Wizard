@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public GameState startingState; 
 
     public DialogueTrigger StartingDialogue;
-
+    #region First Scene
     public UnityEvent FirstBattle;
     public UnityEvent FirstBattleOver;
             
@@ -24,7 +24,13 @@ public class GameManager : MonoBehaviour
             
     public UnityEvent ThirdBattle;
     public UnityEvent ThirdBattleOver;
+    #endregion
 
+    #region Second Scene
+
+    public UnityEvent secondRoom;
+    public UnityEvent SecondRoomBattle;
+    #endregion
     public static event Action GameOver;
 
     public static float enemyCount = 0;
@@ -66,6 +72,13 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GameState.secondRoom:
+                secondRoom.Invoke();
+                break;
+
+            case GameState.secondRoomBattle:
+                SecondRoomBattle?.Invoke();
+                InSecondRoomBattle();
+                onBattle = true;
                 break;
 
 
@@ -88,6 +101,7 @@ public class GameManager : MonoBehaviour
         secondBattle,
         thirdBattle,
         secondRoom,
+        secondRoomBattle,
         gameOver
 
     }
@@ -144,6 +158,10 @@ public class GameManager : MonoBehaviour
         BattleMusic.Play();
     }
 
+    public void InSecondRoomBattle()
+    {
+
+    }
 
     public void GameIsOver()
     {
