@@ -11,11 +11,11 @@ public class GameOverScreen : MonoBehaviour
     private void Awake()
     {
         GameManager.GameOver += EnableScreen;
+        gameObject.SetActive(false);
 
     }
     private void Start()
     {
-        gameObject.SetActive(false);
     }
 
     private void OnDestroy()

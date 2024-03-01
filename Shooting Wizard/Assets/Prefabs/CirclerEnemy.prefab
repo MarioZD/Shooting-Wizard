@@ -173,6 +173,6 @@ MonoBehaviour:
   DamageTimerDefault: 1
   DamageTimer: 1
   physicalPower: 1
-  fieldOfVisionNumber: 9
+  fieldOfVisionNumber: 15
   cooldownTime: 2
   bulletAmount: 8

@@ -29,8 +29,17 @@ public class GameManager : MonoBehaviour
     #region Second Scene
 
     public UnityEvent secondRoom;
+
     public UnityEvent SecondRoomBattle;
+    public UnityEvent SecondRoomBattleOver;
+
+    public UnityEvent bossBattle;
+    public UnityEvent bossBattleOver;
+
     #endregion
+
+    public static event Action Win;
+
     public static event Action GameOver;
 
     public static float enemyCount = 0;
@@ -81,6 +90,15 @@ public class GameManager : MonoBehaviour
                 onBattle = true;
                 break;
 
+            case GameState.bossBattle:
+                BossBattle();
+                bossBattle.Invoke();
+                onBattle = true;
+                break;
+
+            case GameState.winState:
+                WinScreen();
+                break;
 
             case GameState.gameOver:
                 GameOver?.Invoke();
@@ -102,6 +120,8 @@ public class GameManager : MonoBehaviour
         thirdBattle,
         secondRoom,
         secondRoomBattle,
+        bossBattle,
+        winState,
         gameOver
 
     }
@@ -112,7 +132,6 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
 
-        GameOver = null;
 
         StartingDialogue = GetComponent<DialogueTrigger>();
 
@@ -121,6 +140,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        enemyCount = 0;
         SwitchState(startingState);
     }
     // Update is called once per frame
@@ -160,7 +180,18 @@ public class GameManager : MonoBehaviour
 
     public void InSecondRoomBattle()
     {
+        BetweenBattleMusic.Stop();
+        BattleMusic.Play();
+    }
 
+    public void BossBattle()
+    {
+
+    }
+
+    public void WinScreen()
+    {
+        
     }
 
     public void GameIsOver()
@@ -192,6 +223,18 @@ public class GameManager : MonoBehaviour
             case GameState.thirdBattle:
                 StartCoroutine(StopAndStartMusic(BattleMusic, BetweenBattleMusic));
                 ThirdBattleOver?.Invoke();
+                SwitchState(GameState.betweenBattles);
+                break;
+
+            case GameState.secondRoomBattle:
+                StartCoroutine(StopAndStartMusic(BattleMusic, BetweenBattleMusic));
+                SecondRoomBattleOver?.Invoke();
+                SwitchState(GameState.betweenBattles);
+                break;
+
+            case GameState.bossBattle:
+                StartCoroutine(StopAndStartMusic(BattleMusic, BetweenBattleMusic));
+                bossBattleOver?.Invoke();
                 SwitchState(GameState.betweenBattles);
                 break;
 

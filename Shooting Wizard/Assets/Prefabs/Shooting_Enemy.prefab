@@ -174,7 +174,7 @@ MonoBehaviour:
   DamageTimerDefault: 1
   DamageTimer: 1
   physicalPower: 1
-  fieldOfVisionNumber: 10
+  fieldOfVisionNumber: 15
   cooldownTime: 2
 --- !u!1 &7305046003204764351
 GameObject:

@@ -23,5 +23,7 @@ public class SecondRoomBattleTrigger : MonoBehaviour
         {
             GameManager.Instance.SwitchState(GameManager.GameState.secondRoomBattle);
         }
+
+        Destroy(gameObject);
     }
 }
