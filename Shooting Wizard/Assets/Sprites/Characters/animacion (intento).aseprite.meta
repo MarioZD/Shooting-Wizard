@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 32
+    spritePixelsToUnits: 16
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638450069190834408
+  platformSettingsDirtyTick: 638450112409217311
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,7 +121,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: animacion (intento)_Frame_0
     originalName: 
-    pivot: {x: 1.2272727, y: -0.3617021}
+    pivot: {x: 0.5, y: -0.021276597}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -139,6 +139,106 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: animacion (intento)_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.02173913}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 56
+      y: 59
+      width: 44
+      height: 46
+    spriteID: 95d54624781a8d34890c6770e502ee68
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 56, y: 59}
+  - name: animacion (intento)_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 59
+      width: 44
+      height: 47
+    spriteID: e30b49b8d2a155246af457969b5b3475
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 59}
+  - name: animacion (intento)_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 114
+      width: 44
+      height: 47
+    spriteID: eded51b2bcd3f384294341e4a9b4f82e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 114}
+  - name: animacion (intento)_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 169
+      width: 44
+      height: 47
+    spriteID: 56d8da9e9691e7848958c77f6ad9a19c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 169}
+  - name: animacion (intento)_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 56
+      y: 4
+      width: 44
+      height: 47
+    spriteID: 67c161caeb03e7c428217a7eda3587c6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 56, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -148,14 +248,54 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: animacion (intento)
+    - name: animacion (intento)_Frame_0
       frameIndex: 0
       cellRect:
         x: 2
-        y: 17
+        y: 1
         width: 44
         height: 47
       spriteId: ef4a8e0ad6cee454ea1bdf9b9ae204ef
+    - name: animacion (intento)_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 2
+        y: 1
+        width: 44
+        height: 46
+      spriteId: 95d54624781a8d34890c6770e502ee68
+    - name: animacion (intento)_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 2
+        y: 0
+        width: 44
+        height: 47
+      spriteId: e30b49b8d2a155246af457969b5b3475
+    - name: animacion (intento)_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 2
+        y: 1
+        width: 44
+        height: 47
+      spriteId: eded51b2bcd3f384294341e4a9b4f82e
+    - name: animacion (intento)_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 2
+        y: 0
+        width: 44
+        height: 47
+      spriteId: 56d8da9e9691e7848958c77f6ad9a19c
+    - name: animacion (intento)_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 2
+        y: 1
+        width: 44
+        height: 47
+      spriteId: 67c161caeb03e7c428217a7eda3587c6
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -209,4 +349,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 112, y: 64}
+  canvasSize: {x: 48, y: 48}

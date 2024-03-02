@@ -85387,6 +85387,10 @@ PrefabInstance:
       propertyPath: m_HasRenderer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1769507196399822255, guid: 5ae30c234e4b453469e3332cb32ecdce, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2357742908860123644, guid: 5ae30c234e4b453469e3332cb32ecdce, type: 3}
       propertyPath: m_Name
       value: Player
