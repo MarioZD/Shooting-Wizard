@@ -11,6 +11,7 @@ public class PlayerDeadState : PlayerBaseState
         GameObject.Destroy(GameObject.FindGameObjectWithTag("Gun"));
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         GameManager.Instance.SwitchState(GameManager.GameState.gameOver);
+        player.animator.SetFloat("Movement", 0f);
     }
     public override void UpdateState(PlayerStateManager player)
     {

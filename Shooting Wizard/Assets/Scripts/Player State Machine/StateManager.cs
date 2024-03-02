@@ -37,6 +37,10 @@ public class PlayerStateManager : MonoBehaviour, IDamagable
 
             currentState.UpdateState(this);
         }
+        else
+        {
+            animator.SetFloat("Movement", 0f);
+        }
 
         if (Health <= 0 )
         {
