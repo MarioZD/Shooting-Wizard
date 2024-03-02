@@ -6,6 +6,7 @@ public class PlayerStateManager : MonoBehaviour, IDamagable
  {
     public PlayerBaseState currentState;
     public PlayerActiveState activeState = new PlayerActiveState();
+    public Animator animator;
     public PlayerDeadState deadState = new PlayerDeadState();
 
     private Vector3 mousePosition;
@@ -25,8 +26,15 @@ public class PlayerStateManager : MonoBehaviour, IDamagable
 
     void Update()
     {
+        
         if (!DialogueManager.isActive)
         {
+            if (currentState != deadState)
+            {
+                angle = GetAngle();
+                animator.SetFloat("Angle", angle);
+            }
+
             currentState.UpdateState(this);
         }
 

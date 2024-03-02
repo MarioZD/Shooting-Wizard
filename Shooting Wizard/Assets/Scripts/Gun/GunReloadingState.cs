@@ -21,7 +21,7 @@ public class GunReloadingState : GunBaseState
     void RotateGun()
     {
 
-        Gun.angle = Gun.Player.GetAngle();
+        Gun.angle = Gun.Player.angle;
         if (Gun.angle < 90 | Gun.angle > 270)
         {
             Gun.gameObject.transform.parent = Gun.firepointLeft;
