@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Threading;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class SimpleEnemy : MonoBehaviour, IDamagable
@@ -28,7 +27,8 @@ public class SimpleEnemy : MonoBehaviour, IDamagable
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("Player"); 
+        player = GameObject.FindWithTag("Player");
+        GameManager.Instance.enemyCount++;
     }
 
     // Update is called once per frame

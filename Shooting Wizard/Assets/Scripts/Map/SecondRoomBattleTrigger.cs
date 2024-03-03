@@ -22,8 +22,8 @@ public class SecondRoomBattleTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             GameManager.Instance.SwitchState(GameManager.GameState.secondRoomBattle);
+            Destroy(gameObject);
         }
 
-        Destroy(gameObject);
     }
 }

@@ -168,6 +168,7 @@ MonoBehaviour:
   rb: {fileID: 5593090865889248117}
   drops:
   - {fileID: 3967048216679057629, guid: 5a316c90bbe05404d9397af72d902217, type: 3}
+  animator: {fileID: 4052280885096407969}
   shootingRange: 5
   speed: 3
   health: 4

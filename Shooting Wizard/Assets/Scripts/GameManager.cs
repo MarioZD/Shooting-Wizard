@@ -42,8 +42,8 @@ public class GameManager : MonoBehaviour
 
     public static event Action GameOver;
 
-    public static float enemyCount = 0;
-    public static bool onBattle;
+    [SerializeField] public float enemyCount = 0;
+    [SerializeField] public bool onBattle;
 
     public AudioSource BattleMusic;
     public AudioSource BetweenBattleMusic;
@@ -147,7 +147,7 @@ public class GameManager : MonoBehaviour
     {
         if (onBattle)
         {
-            if (enemyCount == 0) 
+            if (enemyCount <= 0) 
             { 
                 onBattle = false;
                 AfterEachBattle(State);

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +7,7 @@ public class SceneChanger : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public SceneAsset newScene;
+    public string newScene;
     void Start()
     {
         
@@ -30,6 +29,6 @@ public class SceneChanger : MonoBehaviour
 
     void ChangeScene()
     {
-        SceneManager.LoadScene(newScene.name);
+        SceneManager.LoadScene(newScene);
     }
 }

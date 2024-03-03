@@ -21,7 +21,6 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < Enemies.Length; i++)
         {
             LastEnemy = Instantiate(Enemies[i], transform.position, Quaternion.identity);
-            GameManager.enemyCount++;
             while (LastEnemy != null)
             {
                 if (!(Vector3.Distance(LastEnemy.transform.position, transform.position) > 2f))

@@ -35,6 +35,7 @@ public class CirclerEnemyStateManager : MonoBehaviour, IDamagable
 
     void Start()
     {
+        GameManager.Instance.enemyCount++;
         player = GameObject.FindWithTag("Player");
         rb = gameObject.GetComponent<Rigidbody2D>();
         currentState = cooldownState;

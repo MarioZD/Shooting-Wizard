@@ -16,7 +16,7 @@ TODO:
 - Mejorar detección de los enemigos (quizá raycasting?)
 - Hacer funcional menu de opciones
 - Añadir imagenes a interfaces
-- Crear e implementar animaciones (personajes brillan cuando les diparan)
+- Crear e implementar animaciones
 - Crear logos y cosas para el juego
 - Agregar poderes al mago
 - Añadir final del juego
