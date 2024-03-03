@@ -10,6 +10,8 @@ Orden de trabajo:
 
 TODO:
 - Añadir imágenes a la intro
+- Corregir faltas de ortografía y coherencia en la intro.
+- Añadir efectos de sonido a enemigos (y si es posible, buscar otra música)
 - Agregar diálogo al principio
 - Mejorar detección de los enemigos (quizá raycasting?)
 - Hacer funcional menu de opciones

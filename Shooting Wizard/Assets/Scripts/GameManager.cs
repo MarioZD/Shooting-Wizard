@@ -56,7 +56,6 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.gunNotPickedUp:
-                GunNotPickedUp();
                 break;
 
             case GameState.firstBatlle:
