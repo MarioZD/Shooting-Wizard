@@ -39,6 +39,7 @@ public class PlayerStateManager : MonoBehaviour, IDamagable
         }
         else
         {
+            rb.velocity = new Vector2(0, 0);
             animator.SetFloat("Movement", 0f);
         }
 
@@ -68,6 +69,7 @@ public class PlayerStateManager : MonoBehaviour, IDamagable
     public void Damage(float DamageAmont)
     {
         activeState.Damage(DamageAmont);
+        animator.SetTrigger("Hit");
     }
 
     public float Health

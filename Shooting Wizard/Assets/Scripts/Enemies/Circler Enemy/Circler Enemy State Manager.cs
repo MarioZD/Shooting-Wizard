@@ -14,6 +14,7 @@ public class CirclerEnemyStateManager : MonoBehaviour, IDamagable
     public Transform firepoint;
     public Rigidbody2D rb;
     public GameObject[] drops;
+    public Animator animator;
 
     CirclerEnemyBaseState currentState;
     public float shootingRange = 6f;
@@ -71,6 +72,8 @@ public class CirclerEnemyStateManager : MonoBehaviour, IDamagable
         {
             SwitchState(deadState);
         }
+        animator.SetTrigger("Hit");
+
     }
 
     private void OnDestroy()

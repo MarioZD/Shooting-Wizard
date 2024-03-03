@@ -14,6 +14,7 @@ public class ShootingEnemyStateManager : MonoBehaviour, IDamagable
     public Transform firepoint;
     public Rigidbody2D rb;
     public GameObject[] drops;
+    public Animator animator;
 
     EnemyBaseState currentState;
     public float shootingRange = 12f;
@@ -69,6 +70,7 @@ public class ShootingEnemyStateManager : MonoBehaviour, IDamagable
         {
             SwitchState(deadState);
         }
+        animator.SetTrigger("Hit");
     }
 
     private void OnDestroy()

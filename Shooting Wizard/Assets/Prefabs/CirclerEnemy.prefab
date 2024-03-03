@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3405367592064475404}
   - component: {fileID: 5593090865889248117}
   - component: {fileID: 7813356743531571983}
+  - component: {fileID: 4052280885096407969}
   m_Layer: 6
   m_Name: CirclerEnemy
   m_TagString: Enemy
@@ -176,3 +177,24 @@ MonoBehaviour:
   fieldOfVisionNumber: 15
   cooldownTime: 2
   bulletAmount: 8
+--- !u!95 &4052280885096407969
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3774526679079739762}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3575bda2bfeeda44a97e11c047e9a640, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

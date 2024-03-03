@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 5729108742093256547}
   - component: {fileID: 6656564013566513139}
   - component: {fileID: 7916351926876605925}
+  - component: {fileID: 5936333205291242710}
   m_Layer: 6
   m_Name: Simple_Enemy
   m_TagString: Enemy
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -129,6 +130,7 @@ MonoBehaviour:
   rb: {fileID: 5729108742093256547}
   drops:
   - {fileID: 3967048216679057629, guid: 5a316c90bbe05404d9397af72d902217, type: 3}
+  animator: {fileID: 5936333205291242710}
   DamageTimer: 1
 --- !u!70 &7916351926876605925
 CapsuleCollider2D:
@@ -165,3 +167,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!95 &5936333205291242710
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3672129206365842684}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 597babb9bc0e18b45a70514a8a31fda5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

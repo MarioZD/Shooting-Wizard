@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Threading;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class SimpleEnemy : MonoBehaviour, IDamagable
@@ -15,6 +16,7 @@ public class SimpleEnemy : MonoBehaviour, IDamagable
     float health = 3;
     GameObject player;
     public GameObject[] drops;
+    public Animator animator;
 
     public float DamageTimer = 1f;
     public float Health
@@ -103,11 +105,13 @@ public class SimpleEnemy : MonoBehaviour, IDamagable
 
     public void Damage(float damageAmount)
     {
+        animator.SetTrigger("Hit");
         Health -= damageAmount;
         if (health <= 0 )
         {
             Die();
-        }    
+        }
+
     }
 
     public void Die()

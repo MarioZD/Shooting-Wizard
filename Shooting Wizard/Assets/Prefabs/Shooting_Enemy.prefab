@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4431904840445685468}
   - component: {fileID: 6728884818765681087}
   - component: {fileID: 1391975199421384082}
+  - component: {fileID: 2121688701853502847}
   m_Layer: 6
   m_Name: Shooting_Enemy
   m_TagString: Enemy
@@ -168,6 +169,7 @@ MonoBehaviour:
   rb: {fileID: 4431904840445685468}
   drops:
   - {fileID: 3967048216679057629, guid: 5a316c90bbe05404d9397af72d902217, type: 3}
+  animator: {fileID: 2121688701853502847}
   shootingRange: 6
   speed: 3
   health: 4
@@ -176,6 +178,27 @@ MonoBehaviour:
   physicalPower: 1
   fieldOfVisionNumber: 15
   cooldownTime: 2
+--- !u!95 &2121688701853502847
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6125544781260602242}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e910e2a0757c7e44a8c5062ea291473d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7305046003204764351
 GameObject:
   m_ObjectHideFlags: 0
