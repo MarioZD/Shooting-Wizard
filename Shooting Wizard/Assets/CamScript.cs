@@ -12,6 +12,7 @@ public class CamScript : MonoBehaviour
     Vector3 refVel = Vector3.zero;
     [SerializeField] float cameraDistance = 2.5f;
     public float smoothTime = 0.3f, zStart;
+    public bool isLocked;
 
     //Camera Shake
     float shakeMag, shakeTimeEnd;
@@ -19,7 +20,7 @@ public class CamScript : MonoBehaviour
     bool shaking;
 
 
-    void Start()
+    private void Awake()
     {
         if (instance == null)
         {
@@ -27,21 +28,23 @@ public class CamScript : MonoBehaviour
         }
         target = player.position;
         zStart = transform.position.z;
+        isLocked = true;
     }
+
 
     void Update()
     {
-        if (!DialogueManager.isActive)
+        if (DialogueManager.isActive | isLocked)
+        {
+            Vector3 Offset = transform.position - player.position;
+            transform.position = player.position + Offset;
+        }
+        else
         {
             mousePos = CaptureMousePos();
             shakeOffset = UpdateShake();
             target = UpdateTargetPos();
             UpdateCameraPosition();
-        }
-        else
-        {
-            Vector3 Offset = transform.position - player.position;
-            transform.position = player.position + Offset;
         }
     }
 
@@ -93,6 +96,16 @@ public class CamScript : MonoBehaviour
         Vector3 tempOffset = shakeVector;
         tempOffset *= shakeMag;
         return tempOffset;
+    }
+
+    public void Unlock()
+    {
+        isLocked = false;
+    }
+
+    public void Lock()
+    {
+        isLocked = true;
     }
 
 

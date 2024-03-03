@@ -76,7 +76,6 @@ public class InFloorGun : MonoBehaviour, IInteractable
     IEnumerator Interacting()
     {
         
-        dialogue1.StartDialogue();
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         while (DialogueManager.isActive)
         {

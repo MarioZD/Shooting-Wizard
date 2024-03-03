@@ -12,12 +12,12 @@ TODO:
 - Añadir imágenes a la intro
 - Corregir faltas de ortografía y coherencia en la intro.
 - Añadir efectos de sonido a enemigos (y si es posible, buscar otra música)
-- Agregar diálogo al principio
 - Mejorar detección de los enemigos (quizá raycasting?)
 - Hacer funcional menu de opciones
 - Añadir imagenes a interfaces
 - Crear e implementar animaciones
 - Crear logos y cosas para el juego
+- Añadir transiciones a las escenas
 - Agregar poderes al mago
 - Añadir final del juego
 
