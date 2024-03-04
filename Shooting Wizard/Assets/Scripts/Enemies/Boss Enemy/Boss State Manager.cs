@@ -5,10 +5,17 @@ using UnityEngine;
 
 public class BossStateManager : MonoBehaviour, IDamagable
 {
-    BossBaseState deadState = new BossDeadState();
+    public BossBaseState deadState = new BossDeadState();
+    public BossBaseState activeState = new BossActiveState();
+    public BossBaseState consecutiveShootingState = new BossConsecutiveShootingState();
+    public BossBaseState circleShootingState = new BossCircleShootingState();
 
     public GameObject player;
-    public GameObject bullet;
+
+    [SerializeField] public GameObject circleBullet;
+    [SerializeField] public GameObject consecutiveBullet;
+
+
     public Transform firepoint;
     public Rigidbody2D rb;
     public GameObject[] drops;
@@ -17,13 +24,14 @@ public class BossStateManager : MonoBehaviour, IDamagable
     BossBaseState currentState;
     public float shootingRange = 6f;
     public float speed = 3f;
-    public float health = 4f;
+    public float health = 30f;
     public float DamageTimerDefault = 1f;
     public float DamageTimer = 1f;
     public float physicalPower = 1f;
-    public float fieldOfVisionNumber = 9f;
-    public float cooldownTime = 2f;
-    public float bulletAmount = 8;
+    public float fieldOfVisionNumber = 20f;
+    public float cooldownTime = 3f;
+    public float bulletAmount = 10f;
+    public float consecutiveShootingTimer = 3f;
 
     public float Health
     {
@@ -36,7 +44,7 @@ public class BossStateManager : MonoBehaviour, IDamagable
         GameManager.Instance.enemyCount++;
         player = GameObject.FindWithTag("Player");
         rb = gameObject.GetComponent<Rigidbody2D>();
-        currentState = deadState;
+        currentState = activeState;
         currentState.EnterState(this);
     }
 
@@ -71,7 +79,7 @@ public class BossStateManager : MonoBehaviour, IDamagable
         {
             SwitchState(deadState);
         }
-        animator.SetTrigger("Hit");
+        // animator.SetTrigger("Hit");
 
     }
 

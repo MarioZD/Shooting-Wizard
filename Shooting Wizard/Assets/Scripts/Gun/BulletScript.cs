@@ -40,7 +40,6 @@ public class BulletScript : MonoBehaviour
         if (!collision.gameObject.CompareTag("Player"))
         {
 
-            Debug.Log("It didn't collide with the player");
             damagable = collision.gameObject.GetComponent<IDamagable>();
             if (damagable != null)
             {
