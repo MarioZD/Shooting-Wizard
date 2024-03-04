@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxAmmo: 15
-  cooldownAmount: 0.5
+  cooldownAmount: 0.25
   reloadAmount: 2
   cooldownTime: 0
   reloadTime: 3
