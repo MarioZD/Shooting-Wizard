@@ -20,6 +20,7 @@ public class BossConsecutiveShootingState : BossBaseState
         PhysicalPower = enemy.physicalPower;
         player = enemy.player;
         timer = enemy.consecutiveShootingTimer;
+        enemy.rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
     }
     public override void UpdateState(BossStateManager enemy)
@@ -35,6 +36,8 @@ public class BossConsecutiveShootingState : BossBaseState
             {
                 currentBetweenShotsTime -= Time.deltaTime;
             }
+
+            timer -= Time.deltaTime;
 
         }
         else

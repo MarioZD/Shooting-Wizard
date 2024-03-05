@@ -79,7 +79,7 @@ public class BossStateManager : MonoBehaviour, IDamagable
         {
             SwitchState(deadState);
         }
-        // animator.SetTrigger("Hit");
+        animator.SetTrigger("Hit");
 
     }
 

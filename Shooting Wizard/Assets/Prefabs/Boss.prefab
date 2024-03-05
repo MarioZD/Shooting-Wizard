@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6800513999417131029}
   - component: {fileID: 7270871945056324741}
   - component: {fileID: 4064521361315839828}
+  - component: {fileID: 4332601534638840364}
   m_Layer: 6
   m_Name: Boss
   m_TagString: Enemy
@@ -163,15 +164,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  circleBullet: {fileID: 3158935310888887153, guid: 23ddd8528f73c984b8eec8f49108aa3e, type: 3}
-  consecutiveBullet: {fileID: 3631731245705286147, guid: 2fbd97d26ee98c7439fd4939f77caf7c, type: 3}
+  circleBullet: {fileID: 1462799545966824703, guid: 0953123c969be794889986194939b99b, type: 3}
+  consecutiveBullet: {fileID: 2814487232150107612, guid: 9dc705b1d115960438651ccb45cd3333, type: 3}
   firepoint: {fileID: 951618861411010493}
   rb: {fileID: 6800513999417131029}
-  drops: []
-  animator: {fileID: 0}
-  shootingRange: 6
+  drops:
+  - {fileID: 3664603474410416956, guid: 7aa0322a2618476489d421f50e773760, type: 3}
+  animator: {fileID: 4332601534638840364}
+  shootingRange: 15
   speed: 3
-  health: 4
+  health: 45
   DamageTimerDefault: 1
   DamageTimer: 1
   physicalPower: 1
@@ -179,6 +181,27 @@ MonoBehaviour:
   cooldownTime: 3
   bulletAmount: 10
   consecutiveShootingTimer: 3
+--- !u!95 &4332601534638840364
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7363286511757664579}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b380904e3058ce04daab1596791ed3d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7895533573707477856
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +227,7 @@ Transform:
   m_GameObject: {fileID: 7895533573707477856}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.325, y: -0.117, z: 0}
+  m_LocalPosition: {x: -0.056, y: -0.12, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

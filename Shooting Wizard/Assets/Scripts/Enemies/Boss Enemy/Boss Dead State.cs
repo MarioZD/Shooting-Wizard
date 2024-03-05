@@ -22,10 +22,8 @@ public class BossDeadState : BossBaseState
     {
         if (drops != null)
         {
-            if (Random.Range(1, 10) >= 9)
-            {
                 UnityEngine.GameObject.Instantiate(drops[Random.Range(0, drops.Length - 1)], currentEnemy.transform.position, Quaternion.identity);
-            }
+            
 
         }
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 
 public class BossCircleShootingState : BossBaseState
@@ -15,11 +16,14 @@ public class BossCircleShootingState : BossBaseState
         CurrentEnemy = enemy;
         PhysicalPower = enemy.physicalPower;
         player = enemy.player;
+
+        enemy.rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        enemy.StartCoroutine(PausedShooting());
     }
     public override void UpdateState(BossStateManager enemy)
     {
-        CircleShoot();
-        enemy.SwitchState(enemy.activeState);
+
+        
     }
     public override void OnCollisionStay2D(BossStateManager enemy, Collision2D collision)
     {
@@ -65,5 +69,13 @@ public class BossCircleShootingState : BossBaseState
 
         }
 
+    }
+
+    IEnumerator PausedShooting()
+    {
+        yield return new WaitForSeconds(0.5f);
+        CircleShoot();
+        yield return new WaitForSeconds(0.5f);
+        CurrentEnemy.SwitchState(CurrentEnemy.activeState);
     }
 }
