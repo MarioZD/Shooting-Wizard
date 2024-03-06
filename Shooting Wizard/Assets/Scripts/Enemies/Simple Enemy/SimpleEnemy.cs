@@ -11,8 +11,9 @@ public class SimpleEnemy : MonoBehaviour, IDamagable
     IDamagable damagable;
     const float power = 1;
     const float fieldOfVisionNumber = 7;
-    float speed = 3;
-    float health = 3;
+    public float speed = 3;
+    public float health = 3;
+    public float angle = 180;
     GameObject player;
     public GameObject[] drops;
     public Animator animator;
@@ -83,6 +84,8 @@ public class SimpleEnemy : MonoBehaviour, IDamagable
     {
         Vector2 PlayerDirection = player.transform.position - transform.position;
         rb.velocity = PlayerDirection.normalized * speed;
+        angle = Mathf.Atan2(PlayerDirection.y, PlayerDirection.x) * Mathf.Rad2Deg + 170f;
+        animator.SetFloat("Angle", angle);
 
         // transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
