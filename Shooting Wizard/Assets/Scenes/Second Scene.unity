@@ -5063,6 +5063,7 @@ GameObject:
   - component: {fileID: 678963365}
   - component: {fileID: 678963364}
   - component: {fileID: 678963363}
+  - component: {fileID: 678963368}
   m_Layer: 0
   m_Name: BossFightTrigger
   m_TagString: Untagged
@@ -5082,6 +5083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bfe5558295995d41bdf9ad65d412760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cutscene: {fileID: 0}
 --- !u!61 &678963364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5221,6 +5223,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &678963368
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678963362}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: b24d9cd4200b8344e9bdca62c372afff, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1001 &687540856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78947,56 +78968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379f022a9a92efc44a3a8947a79508d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1712769085 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2539608295637571924, guid: 0bf94d2ed4797fc4bb716887c4bc81cc, type: 3}
-  m_PrefabInstance: {fileID: 1283467431}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1736353979
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1736353980}
-  m_Layer: 0
-  m_Name: Lights
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1736353980
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1736353979}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 26469075}
-  - {fileID: 1796802665}
-  - {fileID: 1625524296}
-  - {fileID: 1712769085}
-  - {fileID: 537886840}
-  - {fileID: 1221188459}
-  - {fileID: 827055905}
-  - {fileID: 1811021262}
-  - {fileID: 264232959}
-  - {fileID: 57742740}
-  - {fileID: 704153604}
-  - {fileID: 446596995}
-  - {fileID: 205703765}
-  m_Father: {fileID: 2004834751}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1789005256
+--- !u!43 &1689287450
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79161,6 +79133,55 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &1712769085 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2539608295637571924, guid: 0bf94d2ed4797fc4bb716887c4bc81cc, type: 3}
+  m_PrefabInstance: {fileID: 1283467431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1736353979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1736353980}
+  m_Layer: 0
+  m_Name: Lights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1736353980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736353979}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 26469075}
+  - {fileID: 1796802665}
+  - {fileID: 1625524296}
+  - {fileID: 1712769085}
+  - {fileID: 537886840}
+  - {fileID: 1221188459}
+  - {fileID: 827055905}
+  - {fileID: 1811021262}
+  - {fileID: 264232959}
+  - {fileID: 57742740}
+  - {fileID: 704153604}
+  - {fileID: 446596995}
+  - {fileID: 205703765}
+  m_Father: {fileID: 2004834751}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1796802665 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2539608295637571924, guid: 0bf94d2ed4797fc4bb716887c4bc81cc, type: 3}

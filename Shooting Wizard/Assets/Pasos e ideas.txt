@@ -19,7 +19,6 @@ TODO:
 - Crear logos y cosas para el juego
 - Añadir transiciones a las escenas
 - Agregar poderes al mago
-- Añadir final del juego
 
 
 Brainstorm:

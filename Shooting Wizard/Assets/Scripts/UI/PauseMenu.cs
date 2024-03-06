@@ -24,15 +24,19 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
         // paused = GameIsPaused;
-        if (Input.GetKeyDown(KeyCode.Escape)) 
+        if (!DialogueManager.isActive)
         {
-            if (GameIsPaused) { 
-                Resume();
-            }
-            else
+            if (Input.GetKeyDown(KeyCode.Escape)) 
             {
-                Pause();
+                if (GameIsPaused) { 
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
+
         }
     }
 

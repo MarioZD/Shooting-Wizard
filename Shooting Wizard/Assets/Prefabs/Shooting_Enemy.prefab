@@ -172,7 +172,7 @@ MonoBehaviour:
   animator: {fileID: 2121688701853502847}
   shootingRange: 6
   speed: 3
-  health: 4
+  health: 3
   DamageTimerDefault: 1
   DamageTimer: 1
   physicalPower: 1
