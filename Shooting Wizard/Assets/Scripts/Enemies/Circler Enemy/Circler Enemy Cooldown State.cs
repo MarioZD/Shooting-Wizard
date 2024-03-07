@@ -9,6 +9,7 @@ public class CirclerEnemyCooldownState : CirclerEnemyBaseState
     CirclerEnemyStateManager CurrentEnemy;
     GameObject player;
     float angle;
+    Vector2 PlayerDirection;
 
     float cooldown;
     public override void EnterState(CirclerEnemyStateManager enemy)
@@ -21,20 +22,10 @@ public class CirclerEnemyCooldownState : CirclerEnemyBaseState
     }
     public override void UpdateState(CirclerEnemyStateManager enemy)
     {
-        Vector2 PlayerDirection = player.transform.position - enemy.transform.position;
+
+        PlayerDirection = player.transform.position - CurrentEnemy.transform.position;
         angle = Mathf.Atan2(PlayerDirection.y, PlayerDirection.x) * Mathf.Rad2Deg + 170f;
-        enemy.animator.SetFloat("Angle", angle);
-
-        if (enemy.rb.velocity != new Vector2(0, 0))
-        {
-            enemy.animator.SetFloat("Movement", 1f);
-        }
-        else
-        {
-            enemy.animator.SetFloat("Movement", 0f);
-        }
-
-
+        CurrentEnemy.animator.SetFloat("Angle", angle);
         if (cooldown <= 0)
         {
             enemy.SwitchState(enemy.idleState);

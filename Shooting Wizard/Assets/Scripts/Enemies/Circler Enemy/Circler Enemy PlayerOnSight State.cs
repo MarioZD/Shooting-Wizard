@@ -13,6 +13,8 @@ public class CirclerEnemyPlayerOnSightState : CirclerEnemyBaseState
     float PhysicalPower;
     float distance;
     float firstCooldown;
+    float angle;
+    Vector2 PlayerDirection;
 
 
     public override void EnterState(CirclerEnemyStateManager enemy)
@@ -66,6 +68,9 @@ public class CirclerEnemyPlayerOnSightState : CirclerEnemyBaseState
 
     public void PlayerOnSight()
     {
+        PlayerDirection = player.transform.position - CurrentEnemy.transform.position;
+        angle = Mathf.Atan2(PlayerDirection.y, PlayerDirection.x) * Mathf.Rad2Deg + 170f;
+        CurrentEnemy.animator.SetFloat("Angle", angle);
         distance = Vector3.Distance(CurrentEnemy.transform.position, player.transform.position);
         if (distance < CurrentEnemy.fieldOfVisionNumber)
         {
@@ -81,7 +86,7 @@ public class CirclerEnemyPlayerOnSightState : CirclerEnemyBaseState
 
     public void MoveTowardsPlayer()
     {
-        Vector2 PlayerDirection = player.transform.position - CurrentEnemy.transform.position;
+        
         CurrentEnemy.rb.velocity = PlayerDirection.normalized * CurrentEnemy.speed;
 
         // transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
