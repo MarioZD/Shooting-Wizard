@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4279432330250515120}
   - component: {fileID: 5128002626073817592}
   - component: {fileID: 3560792125086887933}
+  - component: {fileID: 6957612881666197381}
   m_Layer: 7
   m_Name: CirclerEnemyBullet
   m_TagString: Untagged
@@ -163,3 +164,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: 0
   bulletForce: 8
+--- !u!95 &6957612881666197381
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158935310888887153}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 66a58a178e2463849844ca0c5d22fe46, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

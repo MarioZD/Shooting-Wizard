@@ -7,6 +7,8 @@ public class CirclerEnemyCooldownState : CirclerEnemyBaseState
 {
     IDamagable damagable;
     CirclerEnemyStateManager CurrentEnemy;
+    GameObject player;
+    float angle;
 
     float cooldown;
     public override void EnterState(CirclerEnemyStateManager enemy)
@@ -15,9 +17,24 @@ public class CirclerEnemyCooldownState : CirclerEnemyBaseState
         CurrentEnemy = enemy;
         cooldown = CurrentEnemy.cooldownTime;
         enemy.rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        player = enemy.player;
     }
     public override void UpdateState(CirclerEnemyStateManager enemy)
     {
+        Vector2 PlayerDirection = player.transform.position - enemy.transform.position;
+        angle = Mathf.Atan2(PlayerDirection.y, PlayerDirection.x) * Mathf.Rad2Deg + 170f;
+        enemy.animator.SetFloat("Angle", angle);
+
+        if (enemy.rb.velocity != new Vector2(0, 0))
+        {
+            enemy.animator.SetFloat("Movement", 1f);
+        }
+        else
+        {
+            enemy.animator.SetFloat("Movement", 0f);
+        }
+
+
         if (cooldown <= 0)
         {
             enemy.SwitchState(enemy.idleState);
@@ -26,6 +43,7 @@ public class CirclerEnemyCooldownState : CirclerEnemyBaseState
         {
             cooldown -= Time.deltaTime;
         }
+
     }
 
 

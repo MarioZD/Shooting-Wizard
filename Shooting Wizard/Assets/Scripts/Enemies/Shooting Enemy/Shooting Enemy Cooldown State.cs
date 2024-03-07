@@ -7,6 +7,9 @@ public class ShootingEnemyCooldownState : EnemyBaseState
 {
     IDamagable damagable;
     ShootingEnemyStateManager CurrentEnemy;
+    float angle;
+    Rigidbody2D rb;
+    GameObject player;
 
     float cooldown;
     public override void EnterState(ShootingEnemyStateManager enemy)
@@ -14,9 +17,27 @@ public class ShootingEnemyCooldownState : EnemyBaseState
         enemy.rb.velocity = Vector3.zero;
         CurrentEnemy = enemy;
         cooldown = CurrentEnemy.cooldownTime;
+        player = enemy.player;
+        rb = enemy.rb;
+
     }
     public override void UpdateState(ShootingEnemyStateManager enemy)
     {
+
+        Vector2 PlayerDirection = player.transform.position - enemy.transform.position;
+        angle = Mathf.Atan2(PlayerDirection.y, PlayerDirection.x) * Mathf.Rad2Deg + 170f;
+        enemy.animator.SetFloat("Angle", angle);
+
+        if (enemy.rb.velocity != new Vector2(0, 0))
+        {
+            enemy.animator.SetFloat("Movement", 1f);
+        }
+        else
+        {
+            enemy.animator.SetFloat("Movement", 0f);
+        }
+
+
         if (cooldown <= 0)
         {
             enemy.SwitchState(enemy.idleState);

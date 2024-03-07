@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class ShootingEnemyPlayerOnSightState : EnemyBaseState
@@ -13,6 +14,9 @@ public class ShootingEnemyPlayerOnSightState : EnemyBaseState
     float PhysicalPower;
     float distance;
     float firstCooldown;
+    float angle;
+    Rigidbody2D rb;
+    Vector2 PlayerDirection;
 
 
     public override void EnterState(ShootingEnemyStateManager enemy)
@@ -21,12 +25,19 @@ public class ShootingEnemyPlayerOnSightState : EnemyBaseState
         CurrentEnemy = enemy;
         PhysicalPower = enemy.physicalPower;
         firstCooldown = enemy.cooldownTime;
+        rb = enemy.rb;
         enemy.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
     public override void UpdateState(ShootingEnemyStateManager enemy)
     {
         PlayerOnSight();
+
+        PlayerDirection = player.transform.position - CurrentEnemy.transform.position;
+        angle = Mathf.Atan2(PlayerDirection.y, PlayerDirection.x) * Mathf.Rad2Deg + 170f;
+        CurrentEnemy.animator.SetFloat("Angle", angle);
+
         
+
         if (IsShootable())
         {
             
@@ -36,6 +47,15 @@ public class ShootingEnemyPlayerOnSightState : EnemyBaseState
         else
         {
             MoveTowardsPlayer();
+        }
+
+        if (rb.velocity != new Vector2(0, 0))
+        {
+           enemy.animator.SetFloat("Movement", 1f);
+        }
+        else
+        {
+            enemy.animator.SetFloat("Movement", 0f);
         }
     }
     public override void OnCollisionStay2D(ShootingEnemyStateManager enemy, Collision2D collision)
@@ -81,8 +101,8 @@ public class ShootingEnemyPlayerOnSightState : EnemyBaseState
 
     public void MoveTowardsPlayer()
     {
-        Vector2 PlayerDirection = player.transform.position - CurrentEnemy.transform.position;
         CurrentEnemy.rb.velocity = PlayerDirection.normalized * CurrentEnemy.speed;
+
 
         // transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }

@@ -206,31 +206,31 @@ AnimatorStateMachine:
     m_Position: {x: 640, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6571648549546810690}
-    m_Position: {x: 280, y: 110, z: 0}
+    m_Position: {x: 570, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2280235463070811092}
-    m_Position: {x: 315, y: 185, z: 0}
+    m_Position: {x: 850, y: 280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7904259131115263521}
-    m_Position: {x: 350, y: 250, z: 0}
+    m_Position: {x: 880, y: 350, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3818803018305141442}
-    m_Position: {x: 385, y: 315, z: 0}
+    m_Position: {x: 920, y: 410, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5052672764946665994}
-    m_Position: {x: 420, y: 380, z: 0}
+    m_Position: {x: 950, y: 480, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4934911118203163667}
-    m_Position: {x: 455, y: 445, z: 0}
+    m_Position: {x: 990, y: 540, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4783237120176288239}
-    m_Position: {x: 490, y: 510, z: 0}
+    m_Position: {x: 1020, y: 610, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3659416108516930190}
-    m_Position: {x: 525, y: 575, z: 0}
+    m_Position: {x: 1060, y: 670, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6318738853755906534}
-    m_Position: {x: 560, y: 640, z: 0}
+    m_Position: {x: 1090, y: 740, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5540228124751332846}
     m_Position: {x: 640, y: 70, z: 0}
@@ -284,19 +284,19 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Blend
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Angle
     m_Type: 1
-    m_DefaultFloat: 360
+    m_DefaultFloat: 180
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
