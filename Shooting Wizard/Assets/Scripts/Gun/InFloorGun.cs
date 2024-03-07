@@ -13,6 +13,7 @@ public class InFloorGun : MonoBehaviour, IInteractable
     public Transform firepoint;
     public GameManager gameManager;
     public GameObject interactableKey;
+    public AudioSource rumble;
 
     public DialogueTrigger dialogue1;
     public DialogueTrigger dialogue2;
@@ -83,6 +84,7 @@ public class InFloorGun : MonoBehaviour, IInteractable
         }
 
         CinemachineImpulseSource ShakeSource = GetComponent<CinemachineImpulseSource>();
+        rumble.Play();
         CameraShakeManager.Instance.CameraShake(ShakeSource);
 
         dialogue2.StartDialogue();

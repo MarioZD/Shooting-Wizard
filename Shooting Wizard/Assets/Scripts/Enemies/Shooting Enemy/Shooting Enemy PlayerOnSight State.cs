@@ -130,6 +130,7 @@ public class ShootingEnemyPlayerOnSightState : EnemyBaseState
             place.y = place.y - player.transform.position.y;
             float angle = Mathf.Atan2(place.y, place.x) * Mathf.Rad2Deg + 180f;
             UnityEngine.GameObject.Instantiate(CurrentEnemy.bullet, CurrentEnemy.firepoint.position , Quaternion.Euler(0, 0, angle));
+            CurrentEnemy.shootingSound.Play();
         }
 
 

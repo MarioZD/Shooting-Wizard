@@ -116,6 +116,7 @@ public class CirclerEnemyPlayerOnSightState : CirclerEnemyBaseState
                 GameObject Shoot = UnityEngine.GameObject.Instantiate(CurrentEnemy.bullet, CurrentEnemy.firepoint.position, Quaternion.Euler(0, 0, angle));
                 
             }
+            CurrentEnemy.shootingSound.Play();
 
 
         }

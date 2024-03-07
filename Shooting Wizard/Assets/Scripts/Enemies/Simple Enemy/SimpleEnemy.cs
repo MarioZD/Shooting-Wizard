@@ -17,6 +17,7 @@ public class SimpleEnemy : MonoBehaviour, IDamagable
     GameObject player;
     public GameObject[] drops;
     public Animator animator;
+    public AudioSource hitSound;
 
     public float DamageTimer = 1f;
     public float Health
@@ -109,6 +110,7 @@ public class SimpleEnemy : MonoBehaviour, IDamagable
     public void Damage(float damageAmount)
     {
         animator.SetTrigger("Hit");
+        hitSound.Play();
         Health -= damageAmount;
         if (health <= 0 )
         {

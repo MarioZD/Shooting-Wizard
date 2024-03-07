@@ -15,6 +15,7 @@ public class CirclerEnemyStateManager : MonoBehaviour, IDamagable
     public Rigidbody2D rb;
     public GameObject[] drops;
     public Animator animator;
+    public AudioSource shootingSound;
 
     CirclerEnemyBaseState currentState;
     public float shootingRange = 6f;

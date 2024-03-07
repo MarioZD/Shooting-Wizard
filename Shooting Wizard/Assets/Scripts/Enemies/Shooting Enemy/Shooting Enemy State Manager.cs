@@ -15,6 +15,8 @@ public class ShootingEnemyStateManager : MonoBehaviour, IDamagable
     public Rigidbody2D rb;
     public GameObject[] drops;
     public Animator animator;
+    public AudioSource shootingSound;
+    public AudioSource hitSound;
 
     EnemyBaseState currentState;
     public float shootingRange = 12f;
@@ -66,7 +68,9 @@ public class ShootingEnemyStateManager : MonoBehaviour, IDamagable
 
     public void Damage(float damageAmount)
     {
+        hitSound.Play();
         Health -= damageAmount;
+        
         if (Health <= 0)
         {
             SwitchState(deadState);

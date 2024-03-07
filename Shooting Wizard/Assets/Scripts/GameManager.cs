@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     public AudioSource BattleMusic;
     public AudioSource BetweenBattleMusic;
     public AudioSource FirstBattleMusic;
+    public AudioSource Torches;
 
     public void SwitchState(GameState newState)
     {
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.gunNotPickedUp:
+                Torches.Play();
                 break;
 
             case GameState.firstBatlle:
@@ -162,12 +164,13 @@ public class GameManager : MonoBehaviour
 
     public void InFirstBattle()
     {
+        Torches.Stop();
         FirstBattleMusic.Play();
     }
 
     public void InSecondBattle()
     {
-        BetweenBattleMusic.Stop();
+        FirstBattleMusic.Stop();
         BattleMusic.Play();
     }
 
@@ -185,7 +188,8 @@ public class GameManager : MonoBehaviour
 
     public void BossBattle()
     {
-
+        BetweenBattleMusic.Stop();
+        BattleMusic.Play();
     }
 
     public void WinScreen()
@@ -208,7 +212,6 @@ public class GameManager : MonoBehaviour
         switch (state) 
         {
             case GameState.firstBatlle:
-                StartCoroutine(StopAndStartMusic(FirstBattleMusic, BetweenBattleMusic));
                 FirstBattleOver?.Invoke();
                 SwitchState(GameState.betweenBattles);
                 break;
