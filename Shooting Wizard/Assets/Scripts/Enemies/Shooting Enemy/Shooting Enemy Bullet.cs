@@ -30,6 +30,14 @@ public class ShootingEnemyBullet : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle);
         rb.AddForce((-transform.right) * bulletForce, ForceMode2D.Impulse);
     }
+
+    private void Update()
+    {
+        if (DialogueManager.isActive)
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Awake()
     {
         Destroy(gameObject, lifeTime);
