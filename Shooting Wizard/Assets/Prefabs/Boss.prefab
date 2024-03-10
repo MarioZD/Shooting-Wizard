@@ -180,7 +180,7 @@ MonoBehaviour:
   fieldOfVisionNumber: 20
   cooldownTime: 3
   bulletAmount: 10
-  consecutiveShootingTimer: 3
+  consecutiveShootingTimer: 4
 --- !u!95 &4332601534638840364
 Animator:
   serializedVersion: 5

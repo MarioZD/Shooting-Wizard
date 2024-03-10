@@ -12,6 +12,9 @@ public class BossActiveState : BossBaseState
     float cooldown;
     float consecutiveCircler = 0;
 
+    Vector2 PlayerDirection;
+    float angle;
+
 
     public override void EnterState(BossStateManager enemy)
     {
@@ -23,7 +26,11 @@ public class BossActiveState : BossBaseState
     }
     public override void UpdateState(BossStateManager enemy)
     {
-        
+
+        PlayerDirection = player.transform.position - CurrentEnemy.transform.position;
+        angle = Mathf.Atan2(PlayerDirection.y, PlayerDirection.x) * Mathf.Rad2Deg + 170f;
+        CurrentEnemy.animator.SetFloat("Angle", angle);
+
         if (cooldown <= 0)
         {
 
@@ -45,6 +52,16 @@ public class BossActiveState : BossBaseState
             MoveTowardsPlayer();
             cooldown -= Time.deltaTime;
         }
+
+        if (enemy.rb.velocity != new Vector2(0, 0))
+        {
+            enemy.animator.SetFloat("Movement", 1f);
+        }
+        else
+        {
+            enemy.animator.SetFloat("Movement", 0f);
+        }
+
     }
     public override void OnCollisionStay2D(BossStateManager enemy, Collision2D collision)
     {

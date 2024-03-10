@@ -139,6 +139,66 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: BossEnemyAnimation_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 59
+      width: 48
+      height: 47
+    spriteID: 1cfbff99e39f4da40859a5286a8a8b51
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 59}
+  - name: BossEnemyAnimation_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 60
+      y: 4
+      width: 48
+      height: 47
+    spriteID: d3c314ae9723f5c4da12e8ad01ded36b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 60, y: 4}
+  - name: BossEnemyAnimation_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 60
+      y: 59
+      width: 48
+      height: 47
+    spriteID: f5e77fbf68b00e047ba85f05022ddedb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 60, y: 59}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -148,7 +208,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: BossEnemyAnimation
+    - name: BossEnemyAnimation_Frame_0
       frameIndex: 0
       cellRect:
         x: 0
@@ -156,6 +216,30 @@ ScriptedImporter:
         width: 48
         height: 47
       spriteId: 94d3a44b4d8e96a4794c564788e3b1b8
+    - name: BossEnemyAnimation_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 1
+        width: 48
+        height: 47
+      spriteId: 1cfbff99e39f4da40859a5286a8a8b51
+    - name: BossEnemyAnimation_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 0
+        width: 48
+        height: 47
+      spriteId: d3c314ae9723f5c4da12e8ad01ded36b
+    - name: BossEnemyAnimation_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 1
+        width: 48
+        height: 47
+      spriteId: f5e77fbf68b00e047ba85f05022ddedb
     linkedCells: []
     parentIndex: -1
   platformSettings: []

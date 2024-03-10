@@ -13,6 +13,8 @@ public class BossConsecutiveShootingState : BossBaseState
     const float betweenShotsTime = 0.3f;
     float timer; 
     float currentBetweenShotsTime;
+    float angle;
+    Vector2 PlayerDirection;
 
     public override void EnterState(BossStateManager enemy)
     {
@@ -21,11 +23,16 @@ public class BossConsecutiveShootingState : BossBaseState
         player = enemy.player;
         timer = enemy.consecutiveShootingTimer;
         enemy.rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        enemy.animator.SetFloat("Movement", 0);
 
     }
     public override void UpdateState(BossStateManager enemy)
     {
-        if(!(timer <= 0))
+        PlayerDirection = player.transform.position - CurrentEnemy.transform.position;
+        angle = Mathf.Atan2(PlayerDirection.y, PlayerDirection.x) * Mathf.Rad2Deg + 170f;
+        CurrentEnemy.animator.SetFloat("Angle", angle);
+
+        if (!(timer <= 0))
         {
             if (currentBetweenShotsTime <= 0)
             {

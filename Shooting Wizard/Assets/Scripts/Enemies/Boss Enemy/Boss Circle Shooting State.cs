@@ -9,6 +9,8 @@ public class BossCircleShootingState : BossBaseState
     float PhysicalPower;
     IDamagable damagable;
     GameObject player;
+    float angle;
+    Vector2 PlayerDirection;
 
     // Start is called before the first frame update
     public override void EnterState(BossStateManager enemy)
@@ -19,10 +21,13 @@ public class BossCircleShootingState : BossBaseState
 
         enemy.rb.constraints = RigidbodyConstraints2D.FreezeAll;
         enemy.StartCoroutine(PausedShooting());
+        enemy.animator.SetFloat("Movement", 0);
     }
     public override void UpdateState(BossStateManager enemy)
     {
-
+        PlayerDirection = player.transform.position - CurrentEnemy.transform.position;
+        angle = Mathf.Atan2(PlayerDirection.y, PlayerDirection.x) * Mathf.Rad2Deg + 170f;
+        CurrentEnemy.animator.SetFloat("Angle", angle);
         
     }
     public override void OnCollisionStay2D(BossStateManager enemy, Collision2D collision)
