@@ -48,6 +48,7 @@ public class ShootingEnemyPlayerOnSightState : EnemyBaseState
         {
             MoveTowardsPlayer();
         }
+        
 
         if (rb.velocity != new Vector2(0, 0))
         {

@@ -24,7 +24,7 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
         // paused = GameIsPaused;
-        if (!DialogueManager.isActive)
+        if (!DialogueManager.isActive && GameManager.Instance.State != GameManager.GameState.gameOver)
         {
             if (Input.GetKeyDown(KeyCode.Escape)) 
             {
